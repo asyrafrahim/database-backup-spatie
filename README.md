@@ -6,6 +6,7 @@
 Add to your Kernel.php
 
 // app/Console/Kernel.php
+
 $schedule->command('backup:clean')
   ->dailyAt('03:00')
   ->runInBackground();
@@ -19,12 +20,15 @@ $schedule->command('backup:run', ['--only-db'])
 You can backup your app by running:
 
 php artisan backup:run
+
 If you want to backup to a specific disk instead of all disks, run:
 
 php artisan backup:run --only-to-disk=name-of-your-disk
+
 If you only need to backup the db, run:
 
 php artisan backup:run --only-db
+
 If you only need to backup the files, and want to skip dumping the databases, run:
 
 php artisan backup:run --only-files
