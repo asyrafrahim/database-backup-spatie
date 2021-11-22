@@ -45,6 +45,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
+            'dump' => [
+                'dump_binary_path' => 'C:\laragon\bin\mysql\mysql-5.7.33-winx64\bin', 
+                'use_single_transaction',
+                'timeout' => 60 * 5, 
+             ],
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
@@ -58,6 +63,7 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+            'dump_command_path' =>'C:\laragon\bin\mysql\mysql-5.7.33-winx64\bin',
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
